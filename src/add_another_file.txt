@@ -7,4 +7,8 @@ dev move step 2 from local
 
 dev move step 2 from github
 
+<<<<<<< HEAD
 dev move step 3 from local
+=======
+dev move step 3 from github
+>>>>>>> 05eb226989a3d013303e46653342ebdcae1c3b65
