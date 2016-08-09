@@ -6,3 +6,5 @@ dev move another step from local!
 dev move step 2 from local
 
 dev move step 2 from github
+
+dev move step 3 from github
