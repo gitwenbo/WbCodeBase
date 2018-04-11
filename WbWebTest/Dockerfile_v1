@@ -1,0 +1,48 @@
+FROM ubuntu:latest
+MAINTAINER dockerwb
+
+# ENV SPRING_PROFILE production
+# ENV JVM_MEMORY -Xms1g -Xmx1g -XX:PermSize=256m -XX:MaxPermSize=256m
+
+#run 在容器里运行命令安装nginx需要软件
+#RUN yum install -y wget gcc gcc-c++ make openssl-devel
+
+#run 在容器里运行命令创建用户
+#RUN useradd -s /sbin/nologin -M www
+
+#workdir 相当于cd到这个目录
+#WORKDIR /usr/local/src/nginx-1.9.3
+
+#run 在容器里运行命令进行编译安装
+#RUN ./configure --prefix=/usr/local/nginx --user=www --group=www --with-http_ssl_module --with-http_stub_status_module --with-pcre=/usr/local/src/pcre-8.37 && make && make install
+
+#run 在容器里运行命令更改nginx配置文件，使其前台运行
+#RUN echo "daemon off;" >> /usr/local/nginx/conf/nginx.conf
+
+#env 将nginx启动命令加到环境变量里
+#ENV PATH /usr/local/nginx/sbin:$PATH
+
+#执行nginx命令
+# CMD ["nginx"]
+
+#ADD setenv.sh ${CATALINA_HOME}/bin/setenv.sh
+
+# ADD jdk1.8.0_161 /home/java_1.8
+# ENV JAVA_HOME /home/java_1.8
+
+RUN apt-get install python-software-properties
+RUN apt-get install software-properties-common
+RUN add-apt-repository ppa:webupd8team/java
+RUN apt-get update
+RUN apt-get -y install oracle-java8-installer
+# RUN update-java-alternatives -s java-8-oracle
+
+RUN rm -rf "${CATALINA_HOME}"/webapps/ROOT/
+COPY build/libs/*.war "${CATALINA_HOME}"/webapps/ROOT.war
+
+EXPOSE 8080
+
+#VOLUME ["/pang/logs/tomcat", "/pang/logs/tomcat/catalina_log", "/pang/logs/tomcat/gc"]
+
+#apt install net-tools
+#apt install iputils-ping

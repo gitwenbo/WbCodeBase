@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+MAINTAINER dockerwb
+
+ADD jdk1.8.0_161 /home/java_1.8
+ENV JAVA_HOME /home/java_1.8
+
+ADD apache-tomcat-8.5.30 /home/tomcat8
+ENV CATALINA_HOME /home/tomcat8
+
+# RUN rm -rf /home/tomcat8/webapps/ROOT/
+# COPY build/libs/*.war /home/tomcat8/webapps/ROOT.war
+
+EXPOSE 8080
+
+CMD ["./home/tomcat8/bin/catalina.sh","run"]
