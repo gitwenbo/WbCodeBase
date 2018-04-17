@@ -1,0 +1,9 @@
+FROM jenkins:latest
+MAINTAINER dockerwb
+
+ADD docker/docker /usr/local/bin/
+
+ARG DOCKER_GID=999
+USER jenkins:${DOCKER_GID}
+
+# docker build -t soonenough/docker_in_jenkins:latest . --build-arg DOCKER_GID=0
