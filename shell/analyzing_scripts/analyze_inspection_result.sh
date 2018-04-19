@@ -12,8 +12,8 @@ product_db_schema="product";
 
 db_47_username="root";
 db_47_password="123456789";
-db_47_hostname="10.211.2.47";
-db_47_schema="postdedup_matching";
+db_47_hostname="10.211.2.176";
+db_47_schema="postdedup_matching_47";
 
 db_176_username="root";
 db_176_password="123456789";
@@ -31,7 +31,7 @@ previous_triggerids=$5;
 
 export TZ=Asia/Shanghai;
 dateOfToday=`date "+%Y%m%d%H%M%S"`;
-filePath=/db_temp/inspection_analysis;
+filePath=/home/matching_analysis/result;
 scriptsFilePath=/db_temp/sql_scripts;
 tmpFile=$filePath/$new_triggerid"_tmp_"$dateOfToday".csv";
 insertSqlFile=$scriptsFilePath/"insert_"$dateOfToday".sql";
@@ -162,7 +162,7 @@ function updateFeatureScoreContrast {
 
     while true
     do
-        get_feature_score_url="SELECT CONCAT('update matching_error_details set fscoreDiff= ,isTrainingScoreConsistent= where requestItemId=',requestItemId,' and duplicateItemId=',duplicateItemId,'^',grayLogFscoreUrl,'^',replace(replace(liveTrainingFeatureDetail,'=HYPERLINK(\"',''),'\", \"click\")',''),'^',IFNULL(replace(replace(trainingFeatureDetail,'=HYPERLINK(\"',''),'\", \"click\")',''),'')) FROM postdedup_matching.matching_error_details a WHERE fscoreDiff IS NULL LIMIT 1;";
+        get_feature_score_url="SELECT CONCAT('update matching_error_details set fscoreDiff= ,isTrainingScoreConsistent= where requestItemId=',requestItemId,' and duplicateItemId=',duplicateItemId,'^',grayLogFscoreUrl,'^',replace(replace(liveTrainingFeatureDetail,'=HYPERLINK(\"',''),'\", \"click\")',''),'^',IFNULL(replace(replace(trainingFeatureDetail,'=HYPERLINK(\"',''),'\", \"click\")',''),'')) FROM matching_error_details a WHERE fscoreDiff IS NULL LIMIT 1;";
         execSqlOn47DB "$get_feature_score_url" $STRING_RESULT_FLAG;
 
         if [ ! -n "$sql_string_result" ] ;then
