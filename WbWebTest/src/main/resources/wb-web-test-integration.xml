@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>wb web test - local</comment>
+
+    <!-- mysql info -->
+    <entry key="wbwebtest.mysql.jdbc.url">jdbc:mysql://127.0.0.1:3306/wbwebtest?useUnicode=true&amp;characterEncoding=UTF8&amp;connectTimeout=5000&amp;socketTimeout=6000</entry>
+    <entry key="wbwebtest.mysql.jdbc.password">cndnj!@#</entry>
+    <entry key="wbwebtest.mysql.jdbc.username">winter</entry>
+    <entry key="wbwebtest.mysql.jdbc.maxTotal">200</entry>
+    <entry key="wbwebtest.mysql.jdbc.minIdle">4</entry>
+    <entry key="wbwebtest.mysql.jdbc.timeBetweenEvictionRunsMillis">60000</entry>
+    <entry key="wbwebtest.mysql.jdbc.minEvictableIdleTimeMillis">300000</entry>
+
+    <!--Redis Configuration: cache-->
+    <entry key="wb-web-test.cache.redis.sentinels">127.0.0.1:26379</entry>
+    <entry key="wb-web-test.cache.redis.poolName">atomic_counter_dev</entry>
+    <entry key="wb-web-test.cache.redis.password"></entry>
+    <entry key="wb-web-test.cache.redis.maxTotal">500</entry>
+    <entry key="wb-web-test.cache.redis.maxIdle">80</entry>
+    <entry key="wb-web-test.cache.redis.minIdle">40</entry>
+    <entry key="wb-web-test.cache.redis.timeout">300000</entry>
+
+    <!-- kafka info -->
+    <entry key="postDedup.kafka.teamName">postDedup</entry>
+    <entry key="kafka.consumer.bootstrap.servers">kafka.wbwebdev.com:9092</entry>
+    <entry key="kafka.consumer.poll.timeout.ms">100</entry>
+    <entry key="kafka.consumer.group.suffix">develop-aws</entry>
+    <entry key="kafka.producer.bootstrap.servers">kafka.wbwebdev.com:9092</entry>
+
+    <!-- elasticsearch info -->
+    <entry key="elasticsearch.client.hosts">10.211.7.96:9300,10.211.7.241:9300,10.211.6.234:9300</entry>
+    <entry key="elasticsearch.master.hosts">10.211.7.96:9300,10.211.7.241:9300,10.211.6.234:9300</entry>
+    <entry key="elasticsearch.cluster.name">wbwebtest-prod</entry>
+    <entry key="elasticsearch.catalogitem.alias">product-spark</entry>
+    <entry key="elasticsearch.catalogitem.type">catalog-v2</entry>
+
+    <!-- thread pool parameters -->
+    <entry key="wbwebtest.threadpool.default.coresize">50</entry>
+    <entry key="wbwebtest.threadpool.default.maxsize">100</entry>
+
+    <!-- Image Image Similarity API-->
+    <entry key="image.similarity.api.server">http://internal-cv-simil-cat-prod-ALB-806497578.ap-northeast-2.elb.amazonaws.com/</entry>
+    <entry key="image.similarity.api.connection.timeout">30000</entry>
+    <entry key="image.similarity.api.read.timeout">30000</entry>
+    <entry key="image.similarity.api.connection.total">1000</entry>
+    <entry key="image.similarity.api.connection.route">500</entry>
+
+</properties>

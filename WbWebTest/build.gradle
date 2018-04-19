@@ -29,20 +29,33 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 
-// In this section you declare where to find the dependencies of your project
 repositories {
-    // Use 'jcenter' for resolving your dependencies.
-    // You can declare any Maven/Ivy/file repository here.
     jcenter()
     mavenCentral()
     maven { url 'http://repo.spring.io/release' } 
 }
 
-// In this section you declare the dependencies for your production and test code
 dependencies {
     compile ("org.springframework:spring-context:$springVersion")
     compile ("org.springframework:spring-core:$springVersion")  
-    compile ("org.springframework:spring-webmvc:$springVersion")  
+    compile ("org.springframework:spring-webmvc:$springVersion")
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.39'
+//    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.0.6.RELEASE'
+//    compile group: 'org.springframework.data', name: 'spring-data-commons', version: '2.0.6.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '1.11.11.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-commons', version: '1.13.11.RELEASE'
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.16.Final'
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.2.0'
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+
+//    compile group: 'io.swagger', name: 'swagger-annotations', version: '1.5.18'
+
+    compile group: 'com.google.guava', name: 'guava', version: '24.1-jre'
+
+    compileOnly 'org.projectlombok:lombok:1.16.20'
 
     compile ("org.slf4j:slf4j-api:1.7.21")
 
