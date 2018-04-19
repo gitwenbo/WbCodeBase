@@ -1,0 +1,40 @@
+1.
+#!/bin/sh
+cd $JENKINS_HOME/workspace/build_start_web_server/WbWebTest
+docker build -t soonenough/tryouts-distributed-web:latest . | tee docker_build_result.log
+
+#docker push soonenough/tryouts-distributed-web:latest
+
+echo '>>> Get old container id'
+CID=$(docker ps -a | grep "soonenough/tryouts-distributed-web" | awk '{print $1}')
+echo $CID
+
+echo '>>> Stopping old container'
+if [ "$CID" != "" ];then
+docker rm -f $CID
+fi
+
+echo '>>> Starting new container'
+docker run --name tryouts-distributed-web1 -p 8081:8080 -d soonenough/tryouts-distributed-web
+
+
+2.
+#!/bin/sh
+cd $JENKINS_HOME/workspace/build_wb_server_image/WbWebTest
+docker build -t soonenough/tryouts-distributed-web:$(date "+%Y%m%d%H%M%S") . | tee docker_build_result.log
+
+
+cd $JENKINS_HOME/WbWebTest/
+
+3.
+docker run --name jenkins_local_server1 -d -p 9091:8080 -v /var/run/docker.sock:/var/run/docker.sock -u jenkins:0 soonenough/docker_in_jenkins
+curl -O https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz && tar zxvf docker-latest.tgz && cp docker/docker /usr/local/bin/ && rm -rf docker docker-latest.tgz
+
+ARG DOCKER_GID=999 USER jenkins:${DOCKER_GID}
+
+$docker build -t jenkins-docker --build-arg DOCKER_GID=20
+
+
+docker cp /Users/huangwenbo/git/WbCodeBase/WbWebTest b132dade7b08:/var/jenkins_home
+--user jenkins:1234
+
