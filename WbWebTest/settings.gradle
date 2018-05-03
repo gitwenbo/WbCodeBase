@@ -17,3 +17,8 @@ include 'services:webservice'
 */
 
 rootProject.name = 'WbWebTest'
+include 'wb-domain'
+include 'wb-batch'
+include 'wb-interface'
+include 'wb-adapter'
+

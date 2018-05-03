@@ -14,7 +14,7 @@ object DBModelGen {
     conn = classOf[com.mysql.jdbc.Driver].newInstance().connect(conn_str, null);
 
     val exporter = new MetaDataExporter();
-    exporter.setPackageName("com.wb.domain.model");
+    exporter.setPackageName("com.wb.domain.user.model");
     exporter.setTargetFolder(new File("src/main/java"));
     exporter.setBeanPrefix("S")
     exporter.export(conn.getMetaData());
@@ -22,5 +22,3 @@ object DBModelGen {
   }
 
 }
-
-`
