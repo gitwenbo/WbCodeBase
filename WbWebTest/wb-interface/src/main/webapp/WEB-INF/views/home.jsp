@@ -16,17 +16,18 @@
             </ul>
         </section>
         <table border="1px">
-            <tr><td>serial number</td><td>student number</td><td>name</td><td>age</td><td>serial number</td><td>name</td><td>email</td></tr>
+            <tr><td>serial number</td><td>student number</td><td>name</td><td>email</td>
+                <%--<td>serial number</td><td>name</td><td>email</td>--%>
+            </tr>
             {{#each stus}}
             <tr>
                 <td>{{@index}}</td>
                 <td>{{id}}</td>
                 <td>{{name}}</td>
-                <%--<td>{{#if age}}{{age}}{{else}}no filed{{/if}}</td>--%>
                 <td>{{#if email}}{{email}}{{else}}no filed{{/if}}</td>
-                <td>{{@key}}</td>
-                <td>{{this.name}}</td>
-                <td>{{#with this}}{{email}}{{/with}}</td>
+                <%--<td>{{@key}}</td>--%>
+                <%--<td>{{this.name}}</td>--%>
+                <%--<td>{{#with this}}{{email}}{{/with}}</td>--%>
             </tr>
             {{/each}}
         </table>

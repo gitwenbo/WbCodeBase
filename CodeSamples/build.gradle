@@ -1,0 +1,112 @@
+
+buildscript {
+
+    ext {
+        springVersion = '3.2.14.RELEASE'
+    }
+
+//    dependencies {
+//        classpath "org.jetbrains.kotlin:kotlin-android-extensions:1.1.1"
+//    }
+}
+
+plugins {
+    id 'java'
+}
+
+//apply plugin: 'kotlin-android-extensions'
+
+group 'wb'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+//    provided group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+    compileOnly("org.projectlombok:lombok:1.16.16")
+
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+    compile group: 'io.netty', name: 'netty-all', version: '4.1.30.Final'
+
+    compile ("org.springframework:spring-context:$springVersion")
+    compile ("org.springframework:spring-core:$springVersion")
+    compile ("org.springframework:spring-webmvc:$springVersion")
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version: '18.0'
+
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.6'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.6.7'
+
+    compile "org.elasticsearch:elasticsearch:5.3.0"
+
+    // https://mvnrepository.com/artifact/org.elasticsearch.client/transport
+    compile group: 'org.elasticsearch.client', name: 'transport', version: '5.3.0'
+
+    // https://mvnrepository.com/artifact/log4j/log4j
+//    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
+
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.1'
+
+    // https://mvnrepository.com/artifact/org.htmlparser/htmlparser
+    compile group: 'org.htmlparser', name: 'htmlparser', version: '2.1'
+
+    // https://mvnrepository.com/artifact/org.openanzo.dependencies/org.apache.commons.httpclient
+//    compile group: 'org.openanzo.dependencies', name: 'org.apache.commons.httpclient', version: '3.1'
+// https://mvnrepository.com/artifact/at.bestsolution.efxclipse.eclipse/org.apache.commons.httpclient
+
+
+    // https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient
+    compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+
+// https://mvnrepository.com/artifact/org.jsoup/jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-collections4
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.2'
+
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+
+    compile group: 'org.apache.kafka', name: 'kafka_2.12', version: '2.1.1'
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
+    compile group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: '1.1.1'
+
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core-common
+    compile group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core-common', version: '1.1.1'
+
+// https://mvnrepository.com/artifact/org.bytedeco.javacpp-presets/hdf5-platform
+    compile group: 'org.bytedeco.javacpp-presets', name: 'hdf5-platform', version: '1.10.4-1.4.4'
+
+
+
+    // https://mvnrepository.com/artifact/org.bytedeco/javacpp
+    compile group: 'org.bytedeco', name: 'javacpp', version: '1.4.4'
+
+    // https://mvnrepository.com/artifact/edu.ucar/cdm
+    compile group: 'edu.ucar', name: 'cdm', version: '4.5.5'
+
+    // https://mvnrepository.com/artifact/org.bytedeco.javacpp-presets/hdf5
+    compile group: 'org.bytedeco.javacpp-presets', name: 'hdf5', version: '1.10.4-1.4.4'
+
+
+}

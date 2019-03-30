@@ -4,21 +4,21 @@ import com.google.common.collect.Lists;
 import com.wb.domain.student.entity.Student;
 import com.wb.domain.student.entity.StudentsData;
 import com.wb.domain.user.entity.User;
+import com.wb.domain.user.service.TestService;
 import com.wb.domain.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.DateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 /**
  * Created by Administrator on 2016/10/2 0002.
@@ -29,6 +29,9 @@ public class HomeController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private TestService testService;
 
     @Autowired
     protected StringRedisTemplate redisTemplate;
@@ -56,7 +59,7 @@ public class HomeController {
         Student stu2 = new Student(11, "Kobe", 17);
 
         String kobeAge = redisTemplate.opsForValue().get("kobeAge");
-        if(kobeAge != null) {
+        if (kobeAge != null) {
             stu2.setAge(Integer.parseInt(kobeAge));
         }
 
@@ -64,6 +67,19 @@ public class HomeController {
         StudentsData StudentsData = new StudentsData(stu2, users);
 
         return StudentsData;
+    }
+
+
+    @RequestMapping(value = "/calculate", method = RequestMethod.GET)
+    @ResponseBody
+    public String asyncConcurrntCalculate(@RequestParam String numString) {
+        List<Integer> nums = Arrays.asList(numString.split("\\|")).stream().map(num -> Integer.parseInt(num)).collect(Collectors.toList());
+
+        StringBuffer result = new StringBuffer();
+        result.append(testService.serialCalculate(nums));
+        result.append(testService.concurrentAsyncCalculate(nums));
+
+        return result.toString();
     }
 
 }

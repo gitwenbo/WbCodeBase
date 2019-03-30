@@ -3,4 +3,8 @@ dependencies {
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
     compile group: 'org.elasticsearch', name: 'elasticsearch', version: '5.6.9'
     compile group: 'org.elasticsearch.client', name: 'transport', version: '5.6.9'
+    compile 'org.apache.kafka:kafka-clients:0.10.2.0'
+    compile 'ch.qos.logback:logback-classic:1.2.2'
+    compile group: 'org.logback-extensions', name: 'logback-ext-spring', version: '0.1.5'
+    compile group: 'com.datastax.cassandra', name: 'cassandra-driver-core', version: '3.5.0'
 }

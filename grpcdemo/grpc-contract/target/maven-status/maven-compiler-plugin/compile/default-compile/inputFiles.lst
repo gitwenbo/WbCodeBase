@@ -1,0 +1,13 @@
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/DemoServiceDto.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/QueryParameter.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/service/DemoServiceDto.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/QueryParameterOrBuilder.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PingResponse.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/grpc-java/wb/grpc/study/service/DemoServiceGrpc.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PingResponseOrBuilder.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PingRequest.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/Person.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PersonListOrBuilder.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PersonOrBuilder.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PingRequestOrBuilder.java
+/Users/huangwenbo/git/WbCodeBase/grpcdemo/grpc-contract/target/generated-sources/protobuf/java/wb/grpc/study/dto/PersonList.java

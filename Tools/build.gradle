@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.apache.poi', name: 'poi', version: '3.11'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.11'
+    compile group: 'com.google.guava', name: 'guava', version: '27.0.1-jre'
+    compile 'ch.qos.logback:logback-classic:1.2.2'
+    compile group: 'org.logback-extensions', name: 'logback-ext-spring', version: '0.1.5'
+
+}

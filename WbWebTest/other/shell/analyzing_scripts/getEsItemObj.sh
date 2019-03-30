@@ -1,7 +1,7 @@
 #!/bin/bash
 
 itemId=$1;
-itemObj=`curl -XGET 10.211.2.96:9200/product/_search?q=itemId:$itemId | jq '.hits.hits[0]._source'`;
+itemObj=`curl -XGET 10.211.7.96:9200/product-spark/_search?q=itemId:$itemId | jq '.hits.hits[0]._source'`;
 
 
 
